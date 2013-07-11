@@ -34,7 +34,27 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+ 		// added by Ravi
+        navigator.accelerometer.getCurrentAcceleration(this.onSuccess, this.onError);
+        //
     },
+    //Ravi added
+    // onSuccess: Get a snapshot of the current acceleration
+    //
+    onSuccess: function(acceleration) {
+        alert('Acceleration X: ' + acceleration.x + '\n' +
+              'Acceleration Y: ' + acceleration.y + '\n' +
+              'Acceleration Z: ' + acceleration.z + '\n' +
+              'Timestamp: '      + acceleration.timestamp + '\n');
+    },
+    // onError: Failed to get the acceleration
+    //
+    onError: function() {
+        alert('onError!');
+    },
+    //end
+    
+    
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
