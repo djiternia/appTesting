@@ -26,6 +26,7 @@
         <title>Hello World</title>
     </head>
     <body>
+     <img src="img/1.png"><img src="img/3.png"><img src="img/leftTrayHeader.jpg"> <br/> 
         <div class="app">
             <h1>Apache Cordova</h1>
             <div id="deviceready" class="blink">
@@ -33,11 +34,32 @@
                 <p class="event received">Device is Ready</p>
             </div>
         </div>
+        <br />
+        First Name : <input id="firstName" type="text"/><br/>
+        Last Name : <input id="lastName" type="text"/><br/>
+        <input id="submit" type="button" value="Submit" /> 
+
+        <div id="showFirstName"></div>
+        <br/>
+
+        <div id="showLastName"></div>
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="js/main1.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-        	alert("Successfull");
+        <script type="text/javascript" >
+        //	alert("Successfull");
             app.initialize();
+            
+            function callthis(){
+            	alert("called");
+            	window.location="http://www.google.com";
+            }
+            
         </script>
+        
+        <!--<script type="text/javascript" src="js/jquery-1.10.2.js"></script>-->
+        <!--<script type="text/javascript" src="js/main1.js"></script>-->
+
     </body>
 </html>
